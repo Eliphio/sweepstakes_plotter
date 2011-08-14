@@ -1,0 +1,8 @@
+javascripts:
+  jquery:
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery-ui.js
+    - public/javascripts/rails.js
+
+  application:
+    - public/javascripts/application.js
