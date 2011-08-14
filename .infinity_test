@@ -1,0 +1,11 @@
+infinity_test do
+  use :app_framework => :rails, :test_framework => :rspec
+
+  before_run do
+    clear :terminal
+  end
+
+  replace_patterns do |application|
+    application.test_framework.test_pattern = 'spec/{helpers,models}/**/*_spec.rb'
+  end
+end
