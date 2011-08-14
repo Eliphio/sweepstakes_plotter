@@ -1,4 +1,10 @@
 SweepstakesPlotter::Application.routes.draw do
+  devise_for :users do
+    root :to => 'dashboard#index'
+  end
+  
+  get 'dashboard' => 'dashboard#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
