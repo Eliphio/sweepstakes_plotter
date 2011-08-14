@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  min_messages: warning
+  pool: 15
+  timeout: 5000
+
+development:
+  <<: *default
+  database: sweepstakes_plotter_development
+  username: sweepstakes_plotter
+  password: sweepstakes_plotter
+
+test:
+  <<: *default
+  database: sweepstakes_plotter_test
+  username: sweepstakes_plotter
+  password: sweepstakes_plotter
+
+production:
+  <<: *default
+  database: sweepstakes_plotter_production
+  username: sweepstakes_plotter
+  password: sweepstakes_plotter
