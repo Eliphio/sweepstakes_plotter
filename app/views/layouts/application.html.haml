@@ -1,13 +1,36 @@
-!!!
-%html
+!!! 1.1
+%html{"xml:lang" => "pt-br", :xmlns => "http://www.w3.org/1999/xhtml"}
+  / design by: JONATHAN
   %head
     %title
       SweepstakesPlotter
 
+    %link{:href => "/images/favicon.png", :rel => "SHORTCUT ICON"}/
     = stylesheet_link_tag :all
-    = javascript_include_tag :defaults
+    = include_javascripts :jquery, :application
     = csrf_meta_tag
 
   %body
+    #wrapper
+      #header
+        #flash
+          - [:notice, :alert, :error].each do |type|
+            /= render 'layouts/flash_message', :type => type if flash[type]
 
-    = yield
+        / Logotipo
+        #logotipo
+
+        / Logoff
+        #usuario
+          - if user_signed_in?
+            = current_user.nickname
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
+          - else
+            = link_to "Sign in", new_user_session_path
+
+      #menu
+
+      / content
+      #content
+        #content_ruby
+          = yield
