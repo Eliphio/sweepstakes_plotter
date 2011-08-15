@@ -7,3 +7,7 @@ User.blueprint do
  password_confirmation { '123456' }
 end
 
+Team.blueprint do
+  name                 { 'Bilbao Vizcaya F. C.' }
+  state                { State::MG }
+end
