@@ -1,0 +1,21 @@
+%h2
+  Listing Teams
+
+%table
+  %thead
+    %tr
+      %th
+        Name
+  %tbody
+    - collection.each do |resource|
+      %tr
+        %td
+          = resource
+        %td
+          = link_to :edit, edit_resource_path(resource)
+        %td
+          = link_to :show, resource
+        %td
+          = link_to :destroy, resource, :method => :delete, :confirm => "Are sure?"
+
+= link_to :new, new_resource_path

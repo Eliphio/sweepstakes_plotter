@@ -1,0 +1,10 @@
+%h2
+  showing Team #{ resource.id }
+
+%ul
+  %li
+    Name:
+    = resource
+
+= link_to :back, collection_path
+= link_to :edit, edit_resource_path(resource)

@@ -1,0 +1,3 @@
+class TeamsController < BaseController
+  
+end
