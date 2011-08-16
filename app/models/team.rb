@@ -1,3 +1,3 @@
 class Team < ActiveRecord::Base
-  validates :name, :state, :presence => true
+  validates :name, :presence => true, :uniqueness => {:allow_blank => true}
 end
