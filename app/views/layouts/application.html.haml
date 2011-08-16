@@ -6,16 +6,12 @@
       SweepstakesPlotter
 
     %link{:href => "/images/favicon.png", :rel => "SHORTCUT ICON"}/
-    = stylesheet_link_tag :all
     = include_javascripts :jquery, :application
     = csrf_meta_tag
 
   %body
     #wrapper
       #header
-        #flash
-          - [:notice, :alert, :error].each do |type|
-            /= render 'layouts/flash_message', :type => type if flash[type]
 
         / Logotipo
         #logotipo
