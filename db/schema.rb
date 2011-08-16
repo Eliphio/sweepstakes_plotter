@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110815105326) do
+ActiveRecord::Schema.define(:version => 20110816103603) do
 
   create_table "teams", :force => true do |t|
     t.string   "name"
-    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
