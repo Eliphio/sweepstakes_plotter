@@ -9,5 +9,4 @@ end
 
 Team.blueprint do
   name                 { 'Bilbao Vizcaya F. C.' }
-  state                { State::MG }
 end
