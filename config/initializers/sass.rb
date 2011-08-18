@@ -1,0 +1,1 @@
+Sass::Plugin.add_template_location "#{Rails.root}/app/assets/stylesheets"
