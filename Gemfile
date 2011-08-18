@@ -38,7 +38,7 @@ group :development, :test do
   gem 'shoulda-matchers', '1.0.0.beta3'
   gem 'steak', '1.1.0'
   gem 'capybara', '0.4.1.2'
-  gem 'selenium-webdriver', '0.2.2'
+  gem 'selenium-webdriver', '2.4.0'
   gem 'machinist', '2.0.0.beta2'
   gem 'machinist-caching', '0.0.1'
 end
