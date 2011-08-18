@@ -5,3 +5,7 @@ javascripts:
 
   application:
     - public/javascripts/application.js
+
+stylesheets:
+  application:
+    - public/stylesheets/application.css

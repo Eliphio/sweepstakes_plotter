@@ -6,6 +6,8 @@
       SweepstakesPlotter
 
     %link{:href => "/images/favicon.png", :rel => "SHORTCUT ICON"}/
+    
+    = include_stylesheets :application
     = include_javascripts :jquery, :application
     = csrf_meta_tag
 
@@ -19,7 +21,7 @@
         / Logoff
         #usuario
           - if user_signed_in?
-            = current_user.nickname
+            = link_to current_user.nickname, edit_user_registration_path
             = link_to "Sign out", destroy_user_session_path, :method => :delete
           - else
             = link_to "Sign in", new_user_session_path
