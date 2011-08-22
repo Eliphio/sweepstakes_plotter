@@ -7,7 +7,7 @@ describe Team do
     it { should validate_uniqueness_of :name }
   end
 
-  it 'to_s should return name' do
+  it 'to_s should be equal name' do
     subject.name = 'Bilbao Viscaya F. C.'
     subject.to_s.should == 'Bilbao Viscaya F. C.'
   end
