@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+
+  time:
+    formats:
+      time: "%H:%M"
+    am: ''
+    pm: ''
