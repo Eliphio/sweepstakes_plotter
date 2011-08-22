@@ -1,0 +1,11 @@
+= simple_form_for resource  do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name
+    = f.input :started_on
+    = f.input :ended_on
+
+  .actions
+    = f.button :submit
+    = link_to :back, collection_path

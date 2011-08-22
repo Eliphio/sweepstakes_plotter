@@ -1,0 +1,16 @@
+%h2
+  showing Championship #{ resource.id }
+
+%ul
+  %li
+    Name:
+    = resource
+  %li
+    Started On:
+    = l resource.started_on 
+  %li
+    Ended On:
+    = l resource.ended_on
+
+= link_to "Back", collection_path
+= link_to "Edit", edit_resource_path(resource)

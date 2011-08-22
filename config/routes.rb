@@ -5,5 +5,6 @@ SweepstakesPlotter::Application.routes.draw do
   
   get 'dashboard' => 'dashboard#index'
 
+  resources :championships
   resources :teams
 end
