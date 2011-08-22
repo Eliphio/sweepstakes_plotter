@@ -1,0 +1,13 @@
+%h2
+  showing Round #{ resource.id }
+
+%ul
+  %li
+    Championshp:
+    = resource.championship
+  %li
+    Name:
+    = resource
+
+= link_to :back, collection_path
+= link_to :edit, edit_resource_path(resource)
