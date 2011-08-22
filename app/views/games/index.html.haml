@@ -1,0 +1,37 @@
+%h2
+  Listing Games
+
+%table
+  %thead
+    %tr
+      %th
+        Round
+      %th
+        Team 1
+      %th
+        Team 2
+      %th
+        Game day
+      %th
+        Game time
+  %tbody
+    - collection.each do |resource|
+      %tr
+        %td
+          = resource.round
+        %td
+          = resource.team_1
+        %td
+          = resource.team_2
+        %td
+          = l resource.game_day
+        %td
+          = l resource.game_time, :format => :time
+        %td
+          = link_to :edit, edit_resource_path(resource)
+        %td
+          = link_to :show, resource
+        %td
+          = link_to :destroy, resource, :method => :delete, :confirm => "Are sure?"
+
+= link_to :new, new_resource_path

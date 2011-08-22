@@ -1,0 +1,13 @@
+= simple_form_for resource  do |f|
+  = f.error_notification
+
+  .inputs
+    = f.association :round
+    = f.association :team_1
+    = f.association :team_2
+    = f.input :game_day
+    = f.input :game_time
+
+  .actions
+    = f.button :submit
+    = link_to :back, collection_path

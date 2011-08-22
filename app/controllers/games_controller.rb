@@ -1,0 +1,2 @@
+class GamesController < BaseController
+end

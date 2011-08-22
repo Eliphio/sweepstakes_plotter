@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818032459) do
+ActiveRecord::Schema.define(:version => 20110822091112) do
 
   create_table "championships", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(:version => 20110818032459) do
   end
 
   add_index "championships", ["name"], :name => "index_championships_on_name"
+
+  create_table "games", :force => true do |t|
+    t.integer  "round_id"
+    t.integer  "team_1_id"
+    t.integer  "team_2_id"
+    t.date     "game_day"
+    t.time     "game_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rounds", :force => true do |t|
+    t.integer  "championship_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rounds", ["championship_id"], :name => "index_rounds_on_championship_id"
+  add_index "rounds", ["name"], :name => "index_rounds_on_name"
 
   create_table "teams", :force => true do |t|
     t.string   "name"

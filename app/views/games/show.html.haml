@@ -1,0 +1,22 @@
+%h2
+  showing Game #{ resource.id }
+
+%ul
+  %li
+    Round:
+    = resource.round
+  %li
+    Team 1:
+    = resource.team_1
+  %li
+    Team 2:
+    = resource.team_2
+  %li
+    Game day:
+    = l resource.game_day
+  %li
+    Game time:
+    = l resource.game_time, :format => :time
+
+= link_to :back, collection_path
+= link_to :edit, edit_resource_path(resource)
