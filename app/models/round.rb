@@ -3,6 +3,7 @@ class Round < ActiveRecord::Base
   has_many :games
   
   validates :championship, :name, :presence => true
+  validates :name, :uniqueness => {:scope => :championship_id, :allow_blank => true}
 
   def to_s
     name.to_s
