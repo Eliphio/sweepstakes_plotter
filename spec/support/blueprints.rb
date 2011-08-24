@@ -24,13 +24,19 @@ end
 
 Round.blueprint do
   championship
-  name         { "1º Round" }
+  name                 { "1º Round" }
 end
 
 Game.blueprint do
   round
-  team_1    { Team.make! }
-  team_2    { Team.make!(:manchester) }
-  game_day  { Date.today.next_month }
-  game_time { Time.now }
+  team_1               { Team.make! }
+  team_2               { Team.make!(:manchester) }
+  game_day             { Date.today.next_month }
+  game_time            { Time.now }
+end
+
+Bet.blueprint do
+  user
+  round
+  status               { Bet::Status::OPEN }
 end
