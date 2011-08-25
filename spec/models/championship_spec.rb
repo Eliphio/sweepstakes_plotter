@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Championship do
+  it { should have_many :rounds }
+
   it { should validate_presence_of :name }
   it { should validate_presence_of :started_on }
   it { should validate_presence_of :ended_on }
@@ -40,4 +42,6 @@ describe Championship do
 
     subject.should have(1).errors_on(:ended_on)
   end
+
+  pending "to define test for hunchable?"
 end

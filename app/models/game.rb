@@ -12,6 +12,13 @@ class Game < ActiveRecord::Base
   def to_s
     "#{team_1} #{team_2}"
   end
+
+  def hunchable?
+    raise unless game_day && game_time
+    DateTime.parse("#{game_day} #{game_time.strftime "%H:%M"}") > 11.minutes.ago
+  rescue
+    false
+  end
 protected
   def teams_of_round_should_not_be_equal
     errors.add :team_2, :not_equal if team_1 && team_2 && team_1 == team_2 

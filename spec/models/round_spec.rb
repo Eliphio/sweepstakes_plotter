@@ -11,6 +11,8 @@ describe Round do
     it { should validate_uniqueness_of(:name).scoped_to(:championship_id)}
   end
 
+  pending "to define test for hunchable?"
+
   it 'to_s should be equal name' do
     subject.name = '1st Round'
     subject.to_s.should == '1st Round'
