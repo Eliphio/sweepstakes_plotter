@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Bet do
   it { should belong_to :user }
   it { should belong_to :round }
+  it { should have_many :hunches }
 
   it { should validate_presence_of :user }
   it { should validate_presence_of :round }
