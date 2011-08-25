@@ -40,3 +40,8 @@ Bet.blueprint do
   round
   status               { Bet::Status::OPEN }
 end
+
+Hunch.blueprint do
+  bet
+  game
+end
