@@ -1,0 +1,7 @@
+%h2
+  Listing Championships Hunchables
+
+
+- collection.each do |resource|
+  .championship.hunchable
+    = link_to resource, hunchables_rounds_path(:championship_id => resource.id)

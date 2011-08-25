@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Championship do
+  it { should have_many :rounds }
+
   it { should validate_presence_of :name }
   it { should validate_presence_of :started_on }
   it { should validate_presence_of :ended_on }
@@ -30,16 +32,16 @@ describe Championship do
   end
 
   it "ended_on should not be equal to today" do
-    subject.started_on = Date.yesterday
     subject.ended_on = Date.today
 
     subject.should have(1).errors_on(:ended_on)
   end
 
   it "ended_on should not be less than to today" do
-    subject.started_on = Date.yesterday - 1.month
     subject.ended_on = Date.yesterday
 
     subject.should have(1).errors_on(:ended_on)
   end
+
+  pending "to define test for hunchable?"
 end

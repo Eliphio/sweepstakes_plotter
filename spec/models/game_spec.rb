@@ -33,4 +33,45 @@ describe Game do
     
     subject.to_s.should == "#{team_1} #{team_2}"
   end
+
+  describe "hunchable?" do
+    subject { Game.make! }
+    it "hunchable? should be true when the future date" do
+      subject.game_day = Date.tomorrow
+      subject.game_time = 0.minutes.ago
+      subject.hunchable?.should be_true
+    end
+
+    it "hunchable? should be true when now" do
+      subject.game_day = Date.today
+      subject.game_time = 0.minutes.ago
+      subject.hunchable?.should be_true
+    end
+
+    it "hunchable? should be true when 10 minutes ago" do
+      subject.game_day = Date.today
+      subject.game_time = 10.minutes.ago
+      subject.hunchable?.should be_true
+    end
+
+    it "hunchable? should be false when 11 minutes ago" do
+      subject.game_day = Date.today
+      subject.game_time = 11.minutes.ago
+      subject.hunchable?.should be_false
+    end
+
+    it "hunchable? should be false when not date or time game defined" do
+      subject.game_day = Date.today
+      subject.game_time = nil
+      subject.hunchable?.should be_false
+
+      subject.game_day = nil
+      subject.game_time = 10.minute.since
+      subject.hunchable?.should be_false
+
+      subject.game_day = nil
+      subject.game_time = nil
+      subject.hunchable?.should be_false
+    end
+  end
 end
