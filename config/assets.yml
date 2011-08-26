@@ -8,3 +8,4 @@ javascripts:
 
 stylesheets:
   application:
+    - public/stylesheets/application.css
