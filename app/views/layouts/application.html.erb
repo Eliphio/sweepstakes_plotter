@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bolão entre amigos Leo Plotter!</title>
+  <%= stylesheet_link_tag "application", "scaffold" %>
+  <%= csrf_meta_tag %>
+  
+  <%= content_for :head %>
+</head>
+<body>
+  <a id="opine_beta">
+  	<img src="images/beta-1.png" alt="Beta">
+  </a>  
+
+  <div id="wrapper">
+
+    <div id="header">
+      <div id="logo">
+        <%= image_tag "bola-2.png", :class => "middle" %>
+      </div>
+
+      <div id="main-nav">
+        <ul>
+          <li><%= link_to "Teams", teams_path %><br /><span>Create Teams</span></li>
+          <li><%= link_to "Champhionship", championships_path %><br /><span>Create Championships</span></li>
+          <li><%= link_to "Rounds", rounds_path %><br /><span>Create Rounds</span></li>
+          <li><%= link_to "Games", games_path%><br /><span>Create Games</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="content">
+      <% if user_signed_in? %>
+  			Signed in as <%= current_user.nickname %>. Not you?
+  			<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  		<% end %>
+
+      <p class="demo">
+        Este site é a demonstração - Bolão entre amigos Leo Plotter!
+      </p>
+
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+      <div id="footer-nav">
+      </div>
+
+      <div id="info">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
