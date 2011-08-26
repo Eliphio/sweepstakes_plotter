@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :omniauthable
   devise :database_authenticatable, :timeoutable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
-  validates :nickname, :presence => true, :uniqueness => {:allow_blank => true}
+  validates :nickname, :status, :presence => true, :uniqueness => {:allow_blank => true}
+
+  has_enumeration_for :pofile, :with => User::Profile, :create_helper => true
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :nickname
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :nickname, :profile
 end
