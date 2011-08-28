@@ -6,6 +6,7 @@ User.blueprint do
  email                 { 'salim@Turkish.net' }
  password              { '123456' }
  password_confirmation { '123456' }
+ profile               { User::Profile::GUEST }
 end
 
 Team.blueprint do
