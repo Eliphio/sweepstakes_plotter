@@ -5,9 +5,11 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-      canont [:create, :destroy], [Bet, Hunch]
+      cannot [:create, :destroy], [Bet, Hunch]
+    elsif user.gambler?
+      can :manage, [Bet, Hunch]
     else
-      can :manage, :[Bet, Hunch]
+      can [:create, :new], User
     end
   end
 end
