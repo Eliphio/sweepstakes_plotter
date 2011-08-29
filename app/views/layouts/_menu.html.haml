@@ -1,16 +1,29 @@
-%ul
-  - if can? :read, Team
-    %li
-      = link_to "Team", teams_path
+#main-nav
+  %ul
+    - if can? :read, Team
+      %li
+        = link_to "Team", teams_path
+        %br
+        %span
+          Create Teams
 
-  - if can? :read, Championship
-    %li
-      = link_to "Champhionship", championships_path
+    - if can? :read, Championship
+      %li
+        = link_to "Champhionship", championships_path
+        %br
+        %span
+          Create Championships
 
-  - if can? :read, Round
-    %li
-      = link_to "Round", rounds_path
+    - if can? :read, Round
+      %li
+        = link_to "Rounds", rounds_path
+        %br
+        %span
+          Create Rounds
 
-  - if can? :read, Game
-    %li
-      = link_to "Game", games_path
+    - if can? :read, Game
+      %li
+        = link_to "Games", games_path
+        %br
+        %span
+          Create Games

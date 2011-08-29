@@ -3,7 +3,7 @@
   / design by: JONATHAN
   %head
     %title
-      SweepstakesPlotter
+      Bolão entre amigos Leo Plotter!
 
     %link{:href => "/images/favicon.png", :rel => "SHORTCUT ICON"}/
     
@@ -12,11 +12,18 @@
     = csrf_meta_tag
 
   %body
+    %a#opine_beta
+      = image_tag "beta-1.png", :alt => "Beta"
+
     #wrapper
       #header
 
         / Logotipo
-        #logotipo
+        #logo
+          = image_tag "bola-2.png", :class => "middle"
+
+        /#menu
+        = render "layouts/menu"
 
         / Logoff
         #usuario
@@ -26,10 +33,10 @@
           - elsif controller_name != 'sessions'
             = link_to "Sign in", new_user_session_path
 
-      #menu
-        = render "layouts/menu"
-
       / content
       #content
         #content_ruby
+          %p.demo
+            Este site é a demonstração - Bolão entre amigos Leo Plotter!
+
           = yield
