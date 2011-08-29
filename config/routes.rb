@@ -5,13 +5,14 @@ SweepstakesPlotter::Application.routes.draw do
   
   get 'dashboard' => 'dashboard#index'
 
-  resources :bets, :only => [:index, :create]
+  resources :bets, :only => [:show, :create]
   resources :championships do
     collection do
       get :hunchables
     end
   end
   resources :games
+  resources :hunches
   resources :rounds do
     collection do
       get :hunchables
