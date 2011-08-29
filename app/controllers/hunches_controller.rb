@@ -1,0 +1,2 @@
+class HunchesController < BaseController
+end
