@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110824110935) do
+ActiveRecord::Schema.define(:version => 20110826041458) do
 
   create_table "bets", :force => true do |t|
     t.integer  "round_id"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20110824110935) do
     t.string   "nickname",                                              :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "profile"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
