@@ -4,4 +4,4 @@
 
 - collection.each do |resource|
   .round.hunchable
-    = link_to resource, hunchables_rounds_path(:championship_id => resource.id)
+    = link_to resource, bets_path(:round_id => resource.id), :method => :post
