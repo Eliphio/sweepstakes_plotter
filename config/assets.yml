@@ -8,4 +8,7 @@ javascripts:
 
 stylesheets:
   application:
+    - public/stylesheets/reset.css
+    - public/stylesheets/common.css
     - public/stylesheets/application.css
+    - public/stylesheets/scaffold.css
