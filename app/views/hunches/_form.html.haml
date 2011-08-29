@@ -1,0 +1,6 @@
+= simple_form_for resource, :remote => true do |f|
+  = f.input :game_id, :as => :hidden
+  = f.input :bet_id, :as => :hidden
+  = f.input :team_1_hunch, :label => f.object.game.team_1
+  = f.input :team_2_hunch, :label => f.object.game.team_2
+  = f.button :submit if f.object.game.hunchable?

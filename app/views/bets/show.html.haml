@@ -1,0 +1,10 @@
+%h2
+  Bet
+
+= resource.championship
+%br
+= resource.round
+
+- resource.hunches.each do |hunch|
+  %div{:id => "hunch_id_#{hunch.id}"}
+    = render "hunches/form", :resource => hunch  
