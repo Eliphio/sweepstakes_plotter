@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :omniauthable
   devise :database_authenticatable, :timeoutable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
-  validates :nickname, :profile, :presence => true, :uniqueness => {:allow_blank => true}
+  validates :nickname, :profile, :presence => true
+  validates :nickname, :uniqueness => {:allow_blank => true}
 
   has_enumeration_for :profile, :with => User::Profile, :create_helpers => true
 
