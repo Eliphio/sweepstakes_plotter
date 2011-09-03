@@ -22,4 +22,4 @@ cp config/database.sample.yml config/database.yml
 
 *** migration and initial charge
 
-rake db:create:all db:migrate db:test:prepare
+rake db:create:all db:migrate db:seed db:test:prepare
