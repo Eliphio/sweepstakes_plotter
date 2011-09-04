@@ -154,7 +154,7 @@ div {
 .search-field {
   font-size: 20px; }
 
-textarea, input:not([type="hidden"]):not([type="radio"]):not([type="check"]), select {
+textarea, input:not([type="hidden"]):not([type="radio"]):not([type="check"]):not([type="submit"]), select {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-style: solid;
@@ -452,3 +452,10 @@ div {
   position: absolute;
   left: 0;
   top: 0; }
+
+[type="submit"] {
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 5px 20px;
+}
