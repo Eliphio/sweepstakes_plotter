@@ -5,10 +5,8 @@
     %title
       Bolão entre amigos Leo Plotter!
 
-    %link{:href => "/images/favicon.png", :rel => "SHORTCUT ICON"}/
-    
-    = include_stylesheets :application
-    = include_javascripts :jquery, :application
+    = stylesheet_link_tag %w(common reset application scaffold)
+    = javascript_include_tag %w(jquery jquery_ujs application)
     = csrf_meta_tag
 
   %body

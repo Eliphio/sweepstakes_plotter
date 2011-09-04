@@ -17,7 +17,6 @@ gem 'ancestry', '1.2.4'
 gem 'haml', '3.1.2'
 gem 'sass', '3.1.7'
 gem 'jquery-rails', '1.0.13'
-gem 'jammit', '0.6.3'
 gem 'simple_form', '1.4.2'
 
 gem 'responders', '0.6.4'
