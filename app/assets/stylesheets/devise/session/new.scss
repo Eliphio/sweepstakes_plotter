@@ -1,0 +1,16 @@
+
+
+
+#sign {
+  height: 200px;
+  padding-left: 15px;
+  width: 45%;
+
+  &.in {
+    border-right: 5px solid black;
+  }
+  &.up {
+    border-left: 5px solid black;
+    margin: -198px 0 0 50%;
+  }
+}
